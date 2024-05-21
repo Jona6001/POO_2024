@@ -7,5 +7,5 @@ if numInicial > numFinal:
     numInicial, numFinal = numFinal, numInicial
 
 print(f"Los números entre {numInicial} y {numFinal} son: ")
-for num in range(numInicial + 1, numFinal):
+for num in range(numInicial, numFinal +1):
     print(num)
