@@ -1,7 +1,5 @@
-
-
 import os
-
+import math
 def solicitarDatos():
     n1 = int(input('Número #1: '))
     n2 = int(input('Número #2: '))
@@ -19,8 +17,12 @@ def getCalculadora(n1, n2, operacion):
             return f'{n1} / {n2} = {n1 / n2} '
         else:
             return 'Es imposible dividir entre 0'
-    else:
-        return 'Operación no válida'
+        
+    elif operacion.lower()=='potencia':
+        return f'La potencia del primer numero ingresado ({n1}) es: {n1**n2} ' 
+    elif operacion.lower()=='raiz':
+        return f'La raiz del primer numero es: {math.sqrt(n1)}. La Raiz del segundo numero es: {math.sqrt(n2)} '
+
 
 def esperaTecla():
     print('Presiona cualquier tecla para continuar...')
@@ -30,7 +32,7 @@ def esperaTecla():
 while True:
     os.system('clear')
     print('\n   ..: CALCULADORA :.. ')
-    operacion = input("Ingresa el tipo de operación que vas a realizar usando signos o el nombre de los mismos (+, -, *, /) \n usa 'salir' para terminar: ")
+    operacion = input("Ingresa el tipo de operación que vas a realizar usando signos o el nombre de los mismos (+, -, *, /, Potencia O Raiz) \n usa 'salir' para terminar: ")
     if operacion.lower() == 'salir':
         print("Saliendo de la calculadora.")
         break
